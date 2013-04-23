@@ -15,16 +15,16 @@ int main(){
 	int hold2 = 0;//will hold drop value
 	int charsPlaced = 0;//Number of peices dropped so can end game if a draw
 	bool gamewon = false;//Will be changed to true when game is won and will exit while loop
-	char player = 15;//start as player 2 will change back 2 player 1
+	char player = 50;//start as player 2 will change back 2 player 1
 	while(!gamewon){//will stop when game is won, ! means NOT makes the oppisite be checked
 		if(hold2 != -1){//check if there was a error in the last drop
-			if(player == 15){//if player 2 lasted dropped a piece so its player 1s turn
+			if(player == 50){//if player 2 lasted dropped a piece so its player 1s turn
 				cout<<"player 1 drop where?";
-				player = 254;//char of players piece
+				player = 49;//char of players piece
 			}
 			else{
 				cout<<"player 2 drop where?";
-				player = 15;//char of player piece
+				player = 50;//char of player piece
 			}
 		}
 		while(true){//will run untill 'break;'
@@ -67,12 +67,12 @@ void display(){
 	cout<<" 1   2   3   4   5   6   7\n";
 	for(int a = 0; a<= 5; a++)
 	{
-		for(int b =0; b <= 6; b++) cout<<char(218)<<char(196)<<char(191)<<" ";
+		//for(int b =0; b <= 6; b++) cout<< "_" << "_" << "_" <<" ";
+		//cout<<'\n';
+		for(int b =0; b <= 6; b++) cout<< "[" <<place[a][b]<< "]" <<" ";
 		cout<<'\n';
-		for(int b =0; b <= 6; b++) cout<<char(179)<<place[a][b]<<char(179)<<" ";
-		cout<<'\n';
-		for(int b =0; b <= 6; b++) cout<<char(192)<<char(196)<<char(217)<<" ";
-		cout<<'\n';
+		//for(int b =0; b <= 6; b++) cout<< "-" << "-" << "-" <<" ";
+		//cout<<'\n';
 	}
 }
 bool check(int a, int b){
