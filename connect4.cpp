@@ -1,8 +1,9 @@
 #include<iostream>
+
+#include "connect4.h"
+
 using namespace std;
-void display();
-bool check(int a, int b);
-int drop(int b, char player);
+
 char place[6][7];//available for whole program
 
 int main(){
@@ -62,9 +63,9 @@ int main(){
 }
 void display(){
 	cout<<" 1   2   3   4   5   6   7\n";
-	for(int a = 0; a<= 5; a++)
+	for(int i = 0; i<= 5; i++)
 	{
-		for(int b =0; b <= 6; b++) cout<< "[" <<place[a][b]<< "]" <<" ";
+		for(int j =0; j <= 6; j++) cout<< "[" <<place[i][j]<< "]" <<" ";
 		cout<<'\n';
 	}
 }
@@ -75,22 +76,22 @@ bool check(int a, int b){
 	int diagonal2 = 1;//(/)
 	char player = place[a][b];
 	int i;//vertical
-	int ii;//horizontal
+	int j;//horizontal
 	//check for vertical(|)
 	for(i = a +1;place[i][b] == player && i <= 5;i++,vertical++);//Check down
 	for(i = a -1;place[i][b] == player && i >= 0;i--,vertical++);//Check up
 	if(vertical >= 4)return true;
 	//check for horizontal(-)
-	for(ii = b -1;place[a][ii] == player && ii >= 0;ii--,horizontal++);//Check left
-	for(ii = b +1;place[a][ii] == player && ii <= 6;ii++,horizontal++);//Check right
+	for(j = b -1;place[a][j] == player && j >= 0;j--,horizontal++);//Check left
+	for(j = b +1;place[a][j] == player && j <= 6;j++,horizontal++);//Check right
 	if(horizontal >= 4) return true;
 	//check for diagonal 1 (\)
-	for(i = a -1, ii= b -1;place[i][ii] == player && i>=0 && ii >=0; diagonal1 ++, i --, ii --);//up and left
-	for(i = a +1, ii = b+1;place[i][ii] == player && i<=5 && ii <=6;diagonal1 ++, i ++, ii ++);//down and right
+	for(i = a -1, j= b -1;place[i][j] == player && i>=0 && j >=0; diagonal1 ++, i --, j --);//up and left
+	for(i = a +1, j = b+1;place[i][j] == player && i<=5 && j <=6;diagonal1 ++, i ++, j ++);//down and right
 	if(diagonal1 >= 4) return true;
 	//check for diagonal 2(/)
-	for(i = a -1, ii= b +1;place[i][ii] == player && i>=0 && ii <= 6; diagonal2 ++, i --, ii ++);//up and right
-	for(i = a +1, ii= b -1;place[i][ii] == player && i<=5 && ii >=0; diagonal2 ++, i ++, ii --);//up and left
+	for(i = a -1, j= b +1;place[i][j] == player && i>=0 && j <= 6; diagonal2 ++, i --, j ++);//up and right
+	for(i = a +1, j= b -1;place[i][j] == player && i<=5 && j >=0; diagonal2 ++, i ++, j --);//up and left
 	if(diagonal2 >= 4) return true;
 	return false;
 }
