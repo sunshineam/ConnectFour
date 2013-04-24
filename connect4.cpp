@@ -16,7 +16,7 @@ int main(){
 	int charsPlaced = 0;//Number of peices dropped so can end game if a draw
 	bool gamewon = false;//Will be changed to true when game is won and will exit while loop
 	char player = 50;//start as player 2 will change back 2 player 1
-	while(!gamewon){//will stop when game is won, ! means NOT makes the oppisite be checked
+	while(!gamewon){//will stop when game is won,
 		if(hold2 != -1){//check if there was a error in the last drop
 			if(player == 50){//if player 2 lasted dropped a piece so its player 1s turn
 				cout<<"player 1 drop where?";
@@ -47,32 +47,24 @@ int main(){
 		else{
 			gamewon = check(hold2,hold);//check if game is run
 			charsPlaced ++;//another character has been succesfully placed
-			//system("cls");//This clears the screen works with windows, not nesscery to run game
 			display();//displayed updated board
 		}
 	}
-	//system("cls");//this clears the screen
 	if(charsPlaced == 42){//if draw
 		cout<<"No winner, Game was draw\n";
-		//system("pause");
 		return 0;
 	}
-	if(player == 15)//if won by player 2
+	if(player == 50)//if won by player 2
 		cout<<"gamewon by : player 2\n";
 	else cout<<"gamewon by : player 1\n";//Else won by player 1
-	//system("pause");//pauses before exit so players can see who won, works with windows
 	return 0;//Exit application
 }
 void display(){
 	cout<<" 1   2   3   4   5   6   7\n";
 	for(int a = 0; a<= 5; a++)
 	{
-		//for(int b =0; b <= 6; b++) cout<< "_" << "_" << "_" <<" ";
-		//cout<<'\n';
 		for(int b =0; b <= 6; b++) cout<< "[" <<place[a][b]<< "]" <<" ";
 		cout<<'\n';
-		//for(int b =0; b <= 6; b++) cout<< "-" << "-" << "-" <<" ";
-		//cout<<'\n';
 	}
 }
 bool check(int a, int b){
