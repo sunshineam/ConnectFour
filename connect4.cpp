@@ -6,23 +6,23 @@ int drop(int b, char player);
 char place[6][7];//available for whole program
 
 int main(){
-	for(int a =0;a <= 5; a++){		//fill place with whitespace
-		for(int b = 0; b<=6; b++)	//
-			place[a][b] = ' ';		//
-	}								//
-	display();//Displays for first time so players can see the board
-	int hold;//Will house user row choice
-	int hold2 = 0;//will hold drop value
-	int charsPlaced = 0;//Number of peices dropped so can end game if a draw
-	bool gamewon = false;//Will be changed to true when game is won and will exit while loop
+	for(int i =0;i <= 5; i++){		//fill place with whitespace
+		for(int j = 0; j<=6; j++)
+			place[i][j] = ' ';		
+	}								
+	display();//Displays board
+	int hold;//user row choice
+	int hold2 = 0;// drop value
+	int charsPlaced = 0;//Number of peices dropped 
+	bool gamewon = false;
 	char player = 50;//start as player 2 will change back 2 player 1
-	while(!gamewon){//will stop when game is won,
+	while(!gamewon){
 		if(hold2 != -1){//check if there was a error in the last drop
 			if(player == 50){//if player 2 lasted dropped a piece so its player 1s turn
 				cout<<"player 1 drop where?";
 				player = 49;//char of players piece
 			}
-			else{
+			else if (player==49){
 				cout<<"player 2 drop where?";
 				player = 50;//char of player piece
 			}
@@ -56,7 +56,8 @@ int main(){
 	}
 	if(player == 50)//if won by player 2
 		cout<<"gamewon by : player 2\n";
-	else cout<<"gamewon by : player 1\n";//Else won by player 1
+	else if (player == 49)
+	cout<<"gamewon by : player 1\n";//Else won by player 1
 	return 0;//Exit application
 }
 void display(){
