@@ -6,7 +6,6 @@ using namespace std;
 char place[6][7];//available for whole program
 
 int main(){
-	//4textcolor (YELLOW);
 	for(int i =0;i <= 5; i++){		//fill place with whitespace
 		for(int j = 0; j<=6; j++)
 			place[i][j] = ' ';		
@@ -35,10 +34,10 @@ int main(){
 			if(hold <=6 && hold>= 0) break;//if within valid range stop loop
 			else cout<< "\nplease enter a value between 1 and 7 :";//ask for input and loop again
 			if (cin.fail())	//catch a non number
-			{						//
+			{						
 				cin.clear();		//Stops cin trying to put its value in to hold
 				char c;			//Try entering a non number without this, 2 see what this does
-				cin>>c;			//
+				cin>>c;			
 			}						//Catch a non number
 
 		}
@@ -51,14 +50,14 @@ int main(){
 			display();//displayed updated board
 		}
 	}
-	if(charsPlaced == 42){//if draw
-		cout<<"No winner, Game was draw\n";
+	if(charsPlaced == 42){//if tie
+		cout<<"No winner, Game was tied\n";
 		return 0;
 	}
 	if(player == 35)//if won by player 2
-		cout<<"gamewon by : player 2\n";
+		cout<<"game won by player 2\n";
 	else if (player == 64)
-		cout<<"gamewon by : player 1\n";//Else won by player 1
+		cout<<"game won by player 1\n";//Else won by player 1
 	return 0;//Exit application
 }
 void display(){
