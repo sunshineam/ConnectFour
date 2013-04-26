@@ -1,12 +1,12 @@
 #include<iostream>
 
 #include "connect4.h"
-
 using namespace std;
 
 char place[6][7];//available for whole program
 
 int main(){
+	//4textcolor (YELLOW);
 	for(int i =0;i <= 5; i++){		//fill place with whitespace
 		for(int j = 0; j<=6; j++)
 			place[i][j] = ' ';		
@@ -16,16 +16,16 @@ int main(){
 	int hold2 = 0;// drop value
 	int charsPlaced = 0;//Number of peices dropped 
 	bool gamewon = false;
-	char player = 50;//start as player 2 will change back 2 player 1
+	char player = 35;//start as player 2 will change back 2 player 1
 	while(!gamewon){
 		if(hold2 != -1){//check if there was a error in the last drop
-			if(player == 50){//if player 2 lasted dropped a piece so its player 1s turn
-				cout<<"player 1 drop where?";
-				player = 49;//char of players piece
+			if(player == 35){//if player 2 last dropped a piece so its player 1s turn
+				cout<<"player 1 drop where? ";
+				player = 64;//char of players piece
 			}
-			else if (player==49){
-				cout<<"player 2 drop where?";
-				player = 50;//char of player piece
+			else if (player==64){
+				cout<<"player 2 drop where? ";
+				player = 35;//char of player piece
 			}
 		}
 		while(true){//will run untill 'break;'
@@ -44,7 +44,7 @@ int main(){
 		}
 		if(charsPlaced == 42) break;//if draw
 		hold2 = drop(hold,player);//drop the player store the row in hold2
-		if(hold2 == -1)	cout<<"Colom is full\nPlease enter anothor number between 1 and 7:";//if error -1 row is full
+		if(hold2 == -1)	cout<<"Column is full\nPlease enter anothor number between 1 and 7:";//if error -1 row is full
 		else{
 			gamewon = check(hold2,hold);//check if game is run
 			charsPlaced ++;//another character has been succesfully placed
@@ -55,10 +55,10 @@ int main(){
 		cout<<"No winner, Game was draw\n";
 		return 0;
 	}
-	if(player == 50)//if won by player 2
+	if(player == 35)//if won by player 2
 		cout<<"gamewon by : player 2\n";
-	else if (player == 49)
-	cout<<"gamewon by : player 1\n";//Else won by player 1
+	else if (player == 64)
+		cout<<"gamewon by : player 1\n";//Else won by player 1
 	return 0;//Exit application
 }
 void display(){
