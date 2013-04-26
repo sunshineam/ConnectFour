@@ -6,12 +6,15 @@
  We changed our minds multpile times deciding what game we wanted to make. The first pivot point came at 
  ruling out Poker due to the complexity that it would entail. We also ruled out the dice because we felt that would acutally be a little
  too easy and a pretty boring game. Our decision really came down to BlackJack and Connect Four, and we decided to go with ConnectFour 
- due to the easy visualization of the playing board and just the fact that the game is fun!
+ due to the easy visualization of the playing board and just the fact that the game is fun! Once chose ConnectFour, we initially wanted 
+ to make a full visual interface, but after a little bit of work decided that would be too difficult. After that we just made small design
+ pivots around what to make the board and players pieces look like. 
 
 3) Data structures
-As far as Data structures go, our gameboard consists of a very simple display using for-loops and spacing. With a game as simple 
-as Connect Four, there really isn't a need for storing data such as previous moves, because the moves are displayed in the game board. 
-Outside of the main function, the clearly seperate functions were display, checking for a win, and dropping a piece. 
+As far as Data structures go, our gameboard consists of a very simple display that uses for-loops, if-else logic, and strategic spacing.
+With a game as simple as Connect Four, there really isn't a need for storing data such as previous moves, because the moves are displayed 
+in the game board. One structural decision we made was to abstract some functions outside of the main function. The obvious and easy to 
+seperate functions were display, checking for a win, and dropping a piece. Building these as stand alone functions makes our code more flexible.
 For next week's assignment, there will probably be more data structures needed in order to implement an artificial player to play against.
 
 4)Describe the hardest aspect of this assignment.
