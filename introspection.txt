@@ -1,30 +1,18 @@
-1) Initial ideas: enumerate the list of crazy and not-so-crazy ideas that you initially had for your game.
+1) Initial ideas
  As we started thinking about the game we wanted to build, we thought about classic board/card games
  that would be fun to make into a program. We considered BlackJack, Poker, Checkers, and Dice. 
  
-
-
-
-
-
-2)Pivots: list the spots where you changed your mind because you wanted to make something easier (or harder) on your team. Explain why.
+2)Pivots
  We changed our minds multpile times deciding what game we wanted to make. The first pivot point came at 
  ruling out Poker due to the complexity that it would entail. We also ruled out the dice because we felt that would acutally be a little
  too easy and a pretty boring game. Our decision really came down to BlackJack and Connect Four, and we decided to go with ConnectFour 
  due to the easy visualization of the playing board and just the fact that the game is fun!
 
-
-
-
-3) Data structures: What data structures did you use? Why did you choose them? What alternate structures would be appropriate?
- Why didn’t you choose those?
+3) Data structures
 As far as Data structures go, our gameboard consists of a very simple display using for-loops and spacing. With a game as simple 
-as Connect Four, there really isn't a need for storing data such as previous moves, because the moves are displayed in the game board.
+as Connect Four, there really isn't a need for storing data such as previous moves, because the moves are displayed in the game board. 
+Outside of the main function, the clearly seperate functions were display, checking for a win, and dropping a piece. 
 For next week's assignment, there will probably be more data structures needed in order to implement an artificial player to play against.
-
-
-
-
 
 4)Describe the hardest aspect of this assignment.
 The hardest part of this assignment was getting the layout of the board game right and checking to see if somebody won( getting 4 in a row)
